@@ -86,11 +86,11 @@
 
     <footer class="footer">
         <ul id="footer">
-            <li class="item"><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li class="item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li class="item"><a href="#"><i class="fab fa-google-plus"></i></a></li>
-            <li class="item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li class="item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="item"><a href="https://www.facebook.com/Syulhan.i" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li class="item"><a href="https://twitter.com/sulhangop" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li class="item"><a href="#"><i class="fab fa-google-plus" target="_blank"></i></a></li>
+            <li class="item"><a href="https://www.linkedin.com/in/dithanrchy/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li class="item"><a href="https://www.instagram.com/sulhangop/" target="_blank"><i class="fab fa-instagram"></i></a></li>
         </ul>
     </footer>
 

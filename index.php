@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Halaman LOGIN</title>
-    <link rel="stylesheet" href="VIEW/CSS/style.css">
+    <link rel="stylesheet" href="ASSETS/CSS/style.css">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
                 </p>
             </form> -->
 
-            <form class="login-form" action="MODEL/login.php" method="post">
+            <form class="login-form" action="CONTROLLER/login.php" method="post">
                 <input type="text" name="user" placeholder="Username" required="">
                 <input type="password" name="pw" placeholder="Password" required="">
                 <button name="login_user"><a class="link" href="#">Login</a></button>
