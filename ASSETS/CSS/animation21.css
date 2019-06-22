@@ -1,0 +1,184 @@
+body{
+    font-size: 1em;
+    /*background: url(https://images.unsplash.com/photo-1511297968426-a869b61af3da?ixlib=rb-0.3.5&s=3193fd953f4249aa5b54dd98b246daba&auto=format&fit=crop&w=1050&q=80);*/
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family: 'Gilroy';
+    background-attachment: fixed;
+    background-image: url(images/bg1.jpg);
+    transition: 1.5s linear;
+    -moz-transition: 1.5s linear;
+}
+.side-menu{
+    width: 14em;
+    height: auto;
+    margin: 5em auto 0;
+    font-weight: 1em;
+    line-height: 2em;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10em;
+}
+.side-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.side-menu ul li{
+    display: block;
+    background-color: #333;
+    height: 2em;
+    padding: 1em 1.5em;
+    position: relative;
+    transition: transform .5s,background-color .5s, color .5s;
+}
+.side-menu ul li:nth-child(1){
+    background-color: #00aced;
+}
+.side-menu ul li:nth-child(2){
+    background-color: #3b5998;
+}
+.side-menu ul li:nth-child(3){
+    background-color: #00aced;
+    /*background-color: #00a300;*/
+}
+.side-menu ul li:nth-child(4){
+    background-color: #3b5998;
+    /*background-color: #cb2027;*/
+}
+.side-menu ul li:nth-child(5){
+    background-color: #00aced;
+    /*background-color: #1e7145;*/
+}
+.side-menu ul li:nth-child(6){
+    background-color: #3b5998;
+    /*background-color: #ffc40d;*/
+}
+.side-menu ul li:hover{
+    background:-color:#339966;
+    transform: translateX(10em);
+}
+.side-menu ul li a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.side-menu ul li span{
+    display: block;
+    position: absolute;
+    font-size: 1em;
+    line-height: 2em;
+    height: 2em;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    padding: 1em 1.5em;
+    right: 0.1666667em;
+    color: #f8f6ff;
+}
+/*section{
+    width: 100%;
+    height: 100vh;
+    background:url(https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=1200);
+    background-size: cover; 
+}*/
+.menu{
+    /*position: absolute;*/
+    width: 100%;
+    /*background: rgba(255,255,255,.5);*/
+    padding: 0 100px;
+    box-sizing: border-box;
+    /*border-bottom: 1px solid rgba(0,0,0,.2)*/
+}
+/*.menu img{
+    float: left;
+    width: 84px;
+  border-radius:30px
+}*/
+.atas{
+    /*position: relative;*/
+    float: left;
+}
+.atas ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.atas ul li{
+    list-style: none;
+}
+.atas ul li a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 25px 20px;
+}
+.atas ul li a:hover{
+    /*background: #184771;*/
+    color: white    ;
+}
+.atas ul li ul{
+    display: block;
+    background: rgba(255,255,255,.5);
+    min-width:250px;
+    position: absolute;
+    margin-top: 1px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    transform: translateY(40px);
+}
+.atas ul li:hover ul{
+    opacity: 0.8;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.atas ul li ul a{
+    padding: 10px
+}
+.container{
+      width: 500px;
+      margin: auto;
+      text-align: justify;
+      border: 2px dotted blue;
+      padding: 5px;
+    }
+      .baca_selengkapnya{
+        color:blue;
+        cursor: pointer;
+      }
+      h1{
+        text-align: center;
+      }
+  
+        .highlights{
+            width: 400px;
+            margin: 0px auto;
+            background: #dee6ec;
+            padding: 5px 15px;
+        }
+        .content a{
+            display: inline-block;
+            cursor: pointer;
+            color: black;
+            font-style: italic;
+        }
+        .content a:hover{
+            color: red;
+        }
+        .content{
+            margin-bottom: 1em;
+        }
+        p{
+            color: grey;
+        }
+        .hide{
+            display: none;
+        }

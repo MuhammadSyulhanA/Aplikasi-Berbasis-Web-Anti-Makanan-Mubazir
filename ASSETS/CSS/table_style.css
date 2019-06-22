@@ -1,0 +1,59 @@
+.table1 {
+    font-family: sans-serif;
+    color: #444;
+    border-collapse: collapse;
+    width: 70%;
+    border: 1px solid #f2f5f7;
+    /*meletakkan tabel ke tengah*/
+    margin: 80px auto;
+}
+.table1 tr th #lol{
+    width: 90px;
+}
+.table1 tr th{
+    background: #35A9DB;
+    color: #fff;
+    font-weight: normal;
+}
+ 
+.table1, th, td {
+    padding: 15px 20px;
+
+    text-align: center;
+}
+ 
+.table1 tr:hover {
+    background-color: #f5f5f5;
+}
+ 
+.table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.kotak{
+    width: 400px;
+    margin: auto 150px;
+    background: green;
+    border: 2px;
+}
+
+.blue {
+    text-decoration: none;
+    background: #218fff;
+    color: white;
+    font-size: 11pt;
+    width: 40%;
+    float: right;
+    margin: 0px 5px;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 20px;
+}
+
+.blue:hover{
+    background: #0165cb;
+}
+
+.formSiswa{
+    clear: both;
+}

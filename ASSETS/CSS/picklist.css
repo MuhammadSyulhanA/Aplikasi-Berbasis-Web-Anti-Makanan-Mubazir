@@ -1,0 +1,124 @@
+
+.isini{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+  min-height: 100vh;
+  /*margin: 0 auto 75px;*/
+  margin-top: -5em;
+  width: 85%;
+  margin-left: 30em;
+  font-family: 'Gilroy';
+}
+.cardnya{
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.2);
+  font-family: 'Gilroy';
+  margin: 25px 0;
+  min-height: 515px;
+  overflow: hidden;
+  width: 100%;
+}
+@media (min-width:768px){
+  .isini{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cardnya{
+    margin: 25px 10px;
+    width: 45%;
+  }
+}
+@media (min-width:1024px){
+  .cardnya{
+    margin: 25px 15px;
+    width: 30%;
+  }
+}
+.isinya{
+  border-bottom: 4px solid #F8864F;
+  height: 200px;
+  overflow: hidden;
+}
+.cardnya img{
+  height: auto;
+  object-position: center center;
+  width: 100%;
+}
+.cardnya .teksnya{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+  min-height: 315px;
+}
+
+@media (min-width:768px){
+  .cardnya .teksnya{
+    padding-bottom: 25px;
+  }
+}
+@media (min-width:1024px){
+  .cardnya .teksnya{
+    margin-top: 25px;
+    min-height: 250px;
+    padding-bottom: 0;
+  }
+}
+.teksnya p.tag{
+  font-family: 'Lato', sans-serif;
+  font-size: .75rem;
+  color: #898989;
+  letter-spacing: 3px;
+  margin-top: 5.5vh;
+  text-transform: uppercase;
+}
+@media (min-width:1024px){
+  .teksnya p.tag{
+    margin-top: 3.5vh;
+  }
+}
+.teksnya h2{
+  font-size: 1.75rem;
+  margin-top: 25px;
+}
+.teksnya p.text{
+  font-size: .95rem;
+  margin: 20px auto;
+  text-align: center;
+  width: 85%;
+}
+.teksnya a.read-more{
+  border: 2px solid #F8864F;
+  border-radius: 25px;
+  color: #F8864F;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: .85rem;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 7.5px 25px;
+  transition: all .5s ease;
+}
+.teksnya a.read-more:hover{
+  background-color: #F8864F;
+  color: #FFFFFF;
+  transform: scale(1.15)
+}
+footer{
+  height: 75px;
+}
+footer p{
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  width: 85%;
+}
+footer p span{
+  color: #FFFFFF;
+}
+footer p a{
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: .75px;
+  text-decoration: none;
+}
