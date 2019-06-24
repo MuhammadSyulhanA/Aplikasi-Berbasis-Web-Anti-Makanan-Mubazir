@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>DANA DONATUR</title>
+	<title>DATA DONATUR</title>
 	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/table_style.css">
 	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/style1.css">
     <link rel="stylesheet" type="text/css" href="../ASSETS/CSS/hamburgermenu.css">
