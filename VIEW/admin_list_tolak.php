@@ -1,13 +1,13 @@
-<?php
-	// $nama= $_GET['nama'];
-	
-    $keterangan= $_GET['keterangan'];
-	$alamat= $_GET['alamat'];
-    $jenis= $_GET['jenis'];
+<?php  
+	// include '../PHP/session.php';
+    include '../MODEL/koneksi_db.php';
+    
+    session_start();
+    $nama = $_SESSION['user'];
+
 ?>
 <!DOCTYPE html>
 <html>
-<head>
 <head>
 	<title>SHARING LIST</title>
 	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/table_style.css">
@@ -25,8 +25,8 @@
         }
     </script>
 </head>
-<body class="form">
-	<div id="content">
+<body>
+<div id="content">
         <span class="slide">
             <a href="#" onclick="openSlideMenu()">
                 <i class="fas fa-bars"></i>
@@ -50,33 +50,45 @@
 	<form class="logout" method="POST" action="../CONTROLLER/logout.php">
 		<input type="submit" name="logout" class="red" value="Keluar">
 	</form>
-	<h1>Edit data</h1>
-	<div class="kotak_edit">
-		<p class="tulisan_editn"></p>
-		<form method="POST" action="../CONTROLLER/update.php">
-			<!-- <label>Nama</label>
-			<input type="text" name="nama_lama" hidden="true" value="<?= $nama ?>"> -->
-			<!-- <label>Alamat</label> -->
-			<input type="text" name="alamat_jemput_lama" hidden="true" value="<?= $alamat ?>">
-			<!-- <label>Email</label> -->
-			<input type="text" name="keterangan_lama" hidden="true" value="<?= $keterangan ?>">
-			<!-- <label>No. HP</label> -->
-			<input type="text" name="jenis_lama" hidden="true" value="<?= $jenis ?>">
+	
+	<h1>TABEL DATA</h1>
+		
+    LIST DITOLAK
+    <table class="table1">
+	<tr>
+			<th>No</th>
+			<th>Nama</th>
+			<th>Alamat Jemput</th>
+			<th>Jenis Makanan</th>
+			<th>Keterangan</th>
+			<th id="#lol">Aksi</th>
+		</tr>
+		<?php 
+			$perintah1="SELECT nama_don, keterangan, gambar, alamat_jemput, jenis_makanan from list_tolak inner join penjemputan on list_tolak.id_jem=penjemputan.id_jemput inner join donatur on penjemputan.id_donatur=donatur.id_don";
+			$result1=mysqli_query($conn, $perintah1);
 
-			<label>Nama</label>
-			<input type="text" name="nama" class="form_login" readonly value="">
+			$c = 0;
 
-			<label>Alamat Jemput</label>
-			<input type="text" name="alamat_jemput_baru" class="form_login" value="">
+			while($data1 = mysqli_fetch_assoc($result1)) : ?>
+        <tr>
+			<td><?= $c+1 ?></td>
+			<td><?= $data1['nama_don'] ?></td>
+			<td><?= $data1['alamat_jemput'] ?></td>
+			<td><?= $data1['jenis_makanan'] ?></td>
+			<td><?= $data1['keterangan'] ?></td>
+			<td>
+				<form class="formSiswa" method="POST" action="../CONTROLLER/aksi.php">
+					<input type="text" name="nama" hidden="true" value="<?= $data1['nama_don'] ?>">
+					<input type="text" name="alamat" hidden="true" value="<?= $data1['alamat_jemput'] ?>">
+					<input type="text" name="jenis" hidden="true" value="<?= $data1['jenis_makanan'] ?>">
+					<input type="text" name="keterangan" hidden="true" value="<?= $data1['keterangan'] ?>">
+					<input type="submit" name="edit_list_tolak" class="blue" value="Edit">
+					<input type="submit" name="hapus_tolak" class="red" value="Hapus">
+				</form>
+			</td>
+		</tr>
+        <?php endwhile ; ?>
+	</table>
 
-			<label>Keterangan</label>
-			<input type="text" name="keterangan_baru" class="form_login" value="">
-
-			<label>Jenis Makanan</label>
-			<input type="text" name="jenis_baru" class="form_login" value="">
-
-			<input type="submit" name="edit_list_terima" class="tombol_edit" value="Edit">
-		</form>
-	</div>
 </body>
 </html>

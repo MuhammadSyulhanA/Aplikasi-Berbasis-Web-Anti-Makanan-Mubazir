@@ -37,7 +37,14 @@
                 <i class="fas fa-times"></i></a>
             <a href="admin_data_donatur.php">DATA DONATUR</a>
 			<a href="admin_data_relawan.php">DATA RELAWAN</a>
-			<a href="admin_list_masuk.php">SHARING LIST</a>
+			<div class="dropdown"><a href="#">SHARING LIST</a>
+				<div  class="dropdown-content">
+					<ul>
+						<li><a href="admin_list_masuk.php"> LIST DITERIMA</a> </li>
+						<li><a href="admin_list_tolak.php"> LIST DITOLAK</a> </li>
+					</ul>
+				</div>
+			</div>
         </div>
     </div>
 	<form class="logout" method="POST" action="../CONTROLLER/logout.php">
@@ -57,10 +64,8 @@
 		</tr>
 		<?php
             $perintah="SELECT nama_don, keterangan, gambar, alamat_jemput, jenis_makanan from list_terima inner join penjemputan on list_terima.id_jem=penjemputan.id_jemput inner join donatur on penjemputan.id_donatur=donatur.id_don";
-            $perintah1="SELECT nama_don, keterangan, gambar, alamat_jemput, jenis_makanan from list_tolak inner join penjemputan on list_tolak.id_jem=penjemputan.id_jemput inner join donatur on penjemputan.id_donatur=donatur.id_don";
             
             $result=mysqli_query($conn, $perintah);
-            $result1=mysqli_query($conn, $perintah1);
   
             $c = 0;
 
@@ -85,37 +90,6 @@
 		</tr>
 		<?php endwhile ; ?>
     </table>
-
-    LIST DITOLAK
-    <table class="table1">
-	<tr>
-			<th>No</th>
-			<th>Nama</th>
-			<th>Alamat Jemput</th>
-			<th>Jenis Makanan</th>
-			<th>Keterangan</th>
-			<th id="#lol">Aksi</th>
-		</tr>
-        <?php while($data1 = mysqli_fetch_assoc($result1)) : ?>
-        <tr>
-			<td><?= $c+1 ?></td>
-			<td><?= $data1['nama_don'] ?></td>
-			<td><?= $data1['alamat_jemput'] ?></td>
-			<td><?= $data1['jenis_makanan'] ?></td>
-			<td><?= $data1['keterangan'] ?></td>
-			<td>
-				<form class="formSiswa" method="POST" action="../CONTROLLER/aksi.php">
-					<input type="text" name="nama" hidden="true" value="<?= $data1['nama_don'] ?>">
-					<input type="text" name="alamat" hidden="true" value="<?= $data1['alamat_jemput'] ?>">
-					<input type="text" name="jenis" hidden="true" value="<?= $data1['jenis_makanan'] ?>">
-					<input type="text" name="keterangan" hidden="true" value="<?= $data1['keterangan'] ?>">
-					<input type="submit" name="edit_list_tolak" class="blue" value="Edit">
-					<input type="submit" name="hapus_tolak" class="red" value="Hapus">
-				</form>
-			</td>
-		</tr>
-        <?php endwhile ; ?>
-	</table>
 
 </body>
 </html>

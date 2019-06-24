@@ -37,7 +37,14 @@
                 <i class="fas fa-times"></i></a>
             <a href="admin_data_donatur.php">DATA DONATUR</a>
 			<a href="admin_data_relawan.php">DATA RELAWAN</a>
-			<a href="admin_list_masuk.php">SHARING LIST</a>
+			<div class="dropdown"><a href="#">SHARING LIST</a>
+				<div  class="dropdown-content">
+					<ul>
+						<li><a href="admin_list_masuk.php"> LIST DITERIMA</a> </li>
+						<li><a href="admin_list_tolak.php"> LIST DITOLAK</a> </li>
+					</ul>
+				</div>
+			</div>
         </div>
     </div>
 	<form class="logout" method="POST" action="../CONTROLLER/logout.php">
