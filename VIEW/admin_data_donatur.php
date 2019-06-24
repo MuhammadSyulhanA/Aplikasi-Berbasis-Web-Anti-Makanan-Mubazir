@@ -9,18 +9,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pelatihan</title>
-	<link rel="stylesheet" type="text/css" href="CSS/table_style.css">
-	<link rel="stylesheet" type="text/css" href="CSS/style1.css">
+	<title>DANA DONATUR</title>
+	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/table_style.css">
+	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/style1.css">
+    <link rel="stylesheet" type="text/css" href="../ASSETS/CSS/hamburgermenu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <script type="text/javascript">
+        function openSlideMenu(){
+            document.getElementById("menu").style.width = "250px";
+            document.getElementById("content").style.marginLeft = "250px";
+        }
+        function closeSlideMenu(){
+            document.getElementById("menu").style.width = "0px";
+            document.getElementById("content").style.marginLeft = "0px";
+        }
+    </script>
 </head>
 <body>
+	<div id="content">
+        <span class="slide">
+            <a href="#" onclick="openSlideMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </span>
+        <div class="nav" id="menu">
+            <a href="#" class="close" onclick="closeSlideMenu()">
+                <i class="fas fa-times"></i></a>
+            <a href="admin_data_donatur.php">DATA DONATUR</a>
+            <a href="admin_data_relawan.php">DATA RELAWAN</a>
+        </div>
+    </div>
 	<form class="logout" method="POST" action="../CONTROLLER/logout.php">
 		<input type="submit" name="logout" class="red" value="Keluar">
 	</form>
-		<ul>
-		<li><a href="admin_data_donatur.php">Data Donatur</a></li>
-		<li><a href="admin_data_relawan.php">Data Relawan</a></li>
-	</ul>
 	<h1>TABEL DATA</h1>
 	<table class="table1">
 		<tr>
@@ -31,9 +52,10 @@
 			<th>No.HP</th>
 			<th id="#lol">Aksi</th>
 		</tr>
-		<?php while ($data = mysqli_fetch_assoc($result)) : ?>
+		<?php $c=0; 
+			while ($data = mysqli_fetch_assoc($result)) : ?>
 		<tr>
-			<td>1</td>
+			<td><?php echo $c=$c+1 ?></td>
 			<td><?= $data['nama_don'] ?></td>
 			<td><?= $data['alamat_don'] ?></td>
 			<td><?= $data['email_don'] ?></td>
@@ -51,11 +73,6 @@
 		</tr>
 		<?php endwhile ; ?>
 	</table>
-
-	<form class="kotak" action="admin_tambah_don.php">
-		<input type="submit" name="tambah" class="blue" value="Tambah Data Siswa">
-	</form>
 	
-
 </body>
 </html>
