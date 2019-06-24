@@ -11,6 +11,14 @@
 	$elama= $_POST['email_lama'];
 	$nolama= $_POST['nohp_lama'];
 
+	$jemputlama= $_POST['alamat_jemput_lama'];
+	$keteranganlama= $_POST['keterangan_lama'];
+	$jenislama= $_POST['jenis_lama'];
+
+	$jemputbaru= $_POST['alamat_jemput_baru'];
+	$keteranganbaru= $_POST['keterangan_baru'];
+	$jenisbaru= $_POST['jenis_baru'];
+
 	$nama_don= $_POST['nama_baru_don'];
 	$alamat_don= $_POST['alamat_baru_don'];
 	$email_don= $_POST['email_baru_don'];
@@ -59,6 +67,26 @@
 			$_SESSION['user']=$nama_rela;
 
 			header("location: ../VIEW/RELAWAN/beranda_relawan.php");
+		}
+	}
+	else if(isset($_POST['edit_list_terima'])){
+		if ($jemputbaru!=null && $keteranganbaru!=null && $jenisbaru!=null){
+			$query = "update penjemputan set alamat_jemput='$jemputbaru', jenis_makanan='$jenisbaru' where alamat_jemput='$jemputlama' and jenis_makanan='$jenislama'";
+			$hasil= mysqli_query($conn, $query);
+			$query1 = "update list_terima set keterangan='$keteranganbaru' where keterangan='$keteranganlama'";
+			$hasil1= mysqli_query($conn, $query1);
+
+			header("location: ../VIEW/admin_list_masuk.php");
+		}
+	}
+	else if(isset($_POST['edit_list_tolak'])){
+		if ($jemputbaru!=null && $keteranganbaru!=null && $jenisbaru!=null){
+			$query = "update penjemputan set alamat_jemput='$jemputbaru', jenis_makanan='$jenisbaru' where alamat_jemput='$jemputlama' and jenis_makanan='$jenislama'";
+			$hasil= mysqli_query($conn, $query);
+			$query1 = "update list_tolak set keterangan='$keteranganbaru' where keterangan='$keteranganlama'";
+			$hasil1= mysqli_query($conn, $query1);
+
+			header("location: ../VIEW/admin_list_masuk.php");
 		}
 	}
 ?>

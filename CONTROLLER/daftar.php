@@ -1,13 +1,13 @@
 <html>
 <head>
     <title>Halaman LOGIN</title>
-    <link rel="stylesheet" href="../VIEW/CSS/style.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/style.css">
 </head>
 <body> 
 
     <div class="login-page">
         <div class="form">
-            <form class="regis-form" action="MODEL/register.php" method="post">
+            <form class="regis-form" action="register.php" method="post">
                 <input type="text" name="name_rel" placeholder="Username" required="">
                 <input type="password" name="pass_rel" placeholder="Password" required="">
                 <input type="text" name="mail_rel" placeholder="Email" required="">
@@ -22,9 +22,9 @@
                 </p>
             </form>
 
-            <form class="regis-form_don" action="../MODEL/register.php" method="post">
+            <form class="regis-form_don" action="register.php" method="post">
                 <input type="text" name="name_don" placeholder="Username" required="">
-                <input type="text" name="pass_don" placeholder="Password" required="">
+                <input type="password" name="pass_don" placeholder="Password" required="">
                 <input type="text" name="mail_don" placeholder="Email" required="">
                 <input type="text" name="address_don" placeholder="Alamat" required="">
                 <input type="text" name="nomor_don" placeholder="No. HP" required="">

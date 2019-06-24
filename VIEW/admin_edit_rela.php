@@ -34,10 +34,11 @@
             <a href="#" class="close" onclick="closeSlideMenu()">
                 <i class="fas fa-times"></i></a>
             <a href="admin_data_donatur.php">DATA DONATUR</a>
-            <a href="admin_data_relawan.php">DATA RELAWAN</a>
+			<a href="admin_data_relawan.php">DATA RELAWAN</a>
+			<a href="admin_list_masuk.php">SHARING LIST</a>
         </div>
     </div>
-	<form class="logout" method="POST" action="">
+	<form class="logout" method="POST" action="../CONTROLLER/logout.php">
 		<input type="submit" name="logout" class="red" value="Keluar">
 	</form>
 	<h1>Edit data</h1>

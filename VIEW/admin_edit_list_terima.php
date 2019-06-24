@@ -1,15 +1,15 @@
-<?php  
-	// include '../PHP/session.php';
-	include '../MODEL/koneksi_db.php';
-
-	$perintah="SELECT nama_don, alamat_don, email_don, nohp_don FROM donatur";
-	$result=mysqli_query($conn, $perintah);
-
+<?php
+	// $nama= $_GET['nama'];
+	
+    $keterangan= $_GET['keterangan'];
+	$alamat= $_GET['alamat'];
+    $jenis= $_GET['jenis'];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>DATA DONATUR</title>
+<head>
+	<title>SHARING LIST</title>
 	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/table_style.css">
 	<link rel="stylesheet" type="text/css" href="../ASSETS/CSS/style1.css">
     <link rel="stylesheet" type="text/css" href="../ASSETS/CSS/hamburgermenu.css">
@@ -25,7 +25,7 @@
         }
     </script>
 </head>
-<body>
+<body class="form">
 	<div id="content">
         <span class="slide">
             <a href="#" onclick="openSlideMenu()">
@@ -43,37 +43,33 @@
 	<form class="logout" method="POST" action="../CONTROLLER/logout.php">
 		<input type="submit" name="logout" class="red" value="Keluar">
 	</form>
-	<h1>TABEL DATA</h1>
-	<table class="table1">
-		<tr>
-			<th>No</th>
-			<th>Nama</th>
-			<th>Alamat</th>
-			<th>Email</th>
-			<th>No.HP</th>
-			<th id="#lol">Aksi</th>
-		</tr>
-		<?php $c=0; 
-			while ($data = mysqli_fetch_assoc($result)) : ?>
-		<tr>
-			<td><?php echo $c=$c+1 ?></td>
-			<td><?= $data['nama_don'] ?></td>
-			<td><?= $data['alamat_don'] ?></td>
-			<td><?= $data['email_don'] ?></td>
-			<td><?= $data['nohp_don'] ?></td>
-			<td>
-				<form class="formSiswa" method="POST" action="../CONTROLLER/aksi.php">
-					<input type="text" name="nama" hidden="true" value="<?= $data['nama_don'] ?>">
-					<input type="text" name="alamat" hidden="true" value="<?= $data['alamat_don'] ?>">
-					<input type="text" name="email" hidden="true" value="<?= $data['email_don'] ?>">
-					<input type="text" name="nohp" hidden="true" value="<?= $data['nohp_don'] ?>">
-					<input type="submit" name="edit_don" class="blue" value="Edit">
-					<input type="submit" name="hapus" class="red" value="Hapus">
-				</form>
-			</td>
-		</tr>
-		<?php endwhile ; ?>
-	</table>
-	
+	<h1>Edit data</h1>
+	<div class="kotak_edit">
+		<p class="tulisan_editn"></p>
+		<form method="POST" action="../CONTROLLER/update.php">
+			<!-- <label>Nama</label>
+			<input type="text" name="nama_lama" hidden="true" value="<?= $nama ?>"> -->
+			<!-- <label>Alamat</label> -->
+			<input type="text" name="alamat_jemput_lama" hidden="true" value="<?= $alamat ?>">
+			<!-- <label>Email</label> -->
+			<input type="text" name="keterangan_lama" hidden="true" value="<?= $keterangan ?>">
+			<!-- <label>No. HP</label> -->
+			<input type="text" name="jenis_lama" hidden="true" value="<?= $jenis ?>">
+
+			<label>Nama</label>
+			<input type="text" name="nama" class="form_login" readonly value="">
+
+			<label>Alamat Jemput</label>
+			<input type="text" name="alamat_jemput_baru" class="form_login" value="">
+
+			<label>Keterangan</label>
+			<input type="text" name="keterangan_baru" class="form_login" value="">
+
+			<label>Jenis Makanan</label>
+			<input type="text" name="jenis_baru" class="form_login" value="">
+
+			<input type="submit" name="edit_list_terima" class="tombol_edit" value="Edit">
+		</form>
+	</div>
 </body>
 </html>
